@@ -10,10 +10,15 @@
 
 // getCharacters();
 const getAllCharacters = async () => {
-
-        function await getCharacters () {
-        fetch('https://rickandmortyapi.com/api/character')
-        .then(res => res.json()).then(characters => console.log(characters));
+try {
+        const getCharacters = await fetch('https://rickandmortyapi.com/api/character');
+        const responseJson = await getCharacters.json();
+        console.log(responseJson)
+       // .then(characters => console.log(characters));
     }
+    catch (err) {
+console.log(err);
 }
-getCharacters();
+}
+
+getAllCharacters();
